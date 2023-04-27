@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(68, 31, 31);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.107);
+    top: 10%;
+    height: 550px;
+    width: 1250px;
+    box-shadow: 0 0 10px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.dino{
+    position: absolute;
+    height: 100px;
+    width: 50px;
+    background-color: white;
+    border-radius: 20px;
+    left: 100px;
+    bottom: 100px;
+    transition-duration: 250ms;
+}
+
+.crash{
+    position: absolute;
+    top: 20%;
+    font-size: 125px;
+    scale: 0.5;
+    transition-duration: 1s;
+}
+
+.obs{
+    position: absolute;
+    height: 100px;
+    width: 50px;
+    border-radius: 20px 20px 0 0;
+    background-color: black;
+    bottom: 100px;
+    right: -50px;
+    transition-duration: 2000ms;
+    transition-timing-function: linear;
+}
+
+.floor{
+    width: 100%;
+    height: 151px;
+    background-color: rgb(54, 0, 0);
+    position: absolute;
+    bottom: 0;
+}
+
+.down{
+    bottom: 100px;
+    transition-timing-function: ease-in;
+}
+
+.up{
+    bottom: 300px;
+    transition-timing-function: ease-out;
+}
+
+#score{
+    position: absolute;
+    padding: 20px;
+    right: 0;
+    font-size: 48px;
+}
