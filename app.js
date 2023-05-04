@@ -81,9 +81,9 @@ window.onkeydown = (e) => {
     }
 }
 
-window.onmousedown = (e) => {
-    if (!hit) {jump()}
-    else {
+window.ontouchstart = (e) => {
+    jump()
+    if (hit) {
     location.href = location.href
     start(2000)
     document.getElementsByClassName('crash')[0].style.scale = 0;
