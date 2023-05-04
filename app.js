@@ -81,7 +81,7 @@ window.onkeydown = (e) => {
     }
 }
 
-window.onclick = (e) => {
+window.onmousedown = (e) => {
     if (!hit) {jump()}
     else {
     location.href = location.href
