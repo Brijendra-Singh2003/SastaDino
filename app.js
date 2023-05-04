@@ -49,7 +49,7 @@ function generateBarriers() {
     }, 2);
 
     const t = setInterval(()=> {
-        if(d2.offsetLeft < 150 && d2.offsetLeft > 50 && dino.offsetTop > 250) {
+        if(d2.offsetLeft < 150 && d2.offsetLeft > 50 && dino.offsetTop > 240) {
             crash()
             clearInterval(t)
             return
@@ -67,25 +67,44 @@ function generateBarriers() {
 }
 
 window.onkeydown = (e) => {
-    if(e.keyCode == 32 && !hit) {jump()}
-    else if(e.keyCode == 13) {
-        if(hit)
+    if(e.keyCode == 32) {
+        if (!hit) {jump()}
+        else {
         location.href = location.href
+        start(2000)
+        document.getElementsByClassName('crash')[0].style.scale = 0;
+        }
+        if (document.getElementsByClassName('crash')[0].style.scale != 0) {
+            start(2000)
+            document.getElementsByClassName('crash')[0].style.scale = 0;
+        }
+    }
+}
+
+window.onclick = (e) => {
+    if (!hit) {jump()}
+    else {
+    location.href = location.href
+    start(2000)
+    document.getElementsByClassName('crash')[0].style.scale = 0;
+    }
+    if (document.getElementsByClassName('crash')[0].style.scale != 0) {
         start(2000)
         document.getElementsByClassName('crash')[0].style.scale = 0;
     }
 }
 
-window.onclick = (e) => {
-    if(!hit) {jump()}
-}
-
 function crash() {
     hit = true;
+    let arr = document.getElementsByClassName('obs')
+    for(item of arr) {
+
+        item.style.left = item.offsetLeft + 'px'
+    }
     // dino.style.bottom = '75px'
     dino.classList.remove('down')
     dino.classList.add('up')
-
+    
     setTimeout(() => {
         dino.classList.add('down')
         dino.style.rotate = '90deg'
@@ -99,9 +118,4 @@ function crash() {
         localStorage.setItem('highScore', count)
     }
     count--;
-    let arr = document.getElementsByClassName('obs')
-    for(item of arr) {
-
-        item.style.left = item.offsetLeft + 'px'
-    }
 }
