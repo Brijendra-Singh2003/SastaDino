@@ -8,16 +8,19 @@ body{
     background-color: rgb(68, 31, 31);
     display: flex;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+    height: max(100vh, 550px);
+    width: max(100vw, 1250px);
 }
 
 .container{
+    display: flex;
+    justify-content: center;
     position: relative;
     background-color: rgba(255, 255, 255, 0.107);
-    top: 10%;
     height: 550px;
     width: 1250px;
-    box-shadow: 0 0 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     overflow: hidden;
 }
@@ -35,9 +38,8 @@ body{
 
 .crash{
     position: absolute;
-    top: 20%;
+    top: 100px;
     font-size: 125px;
-    scale: 0.5;
     transition-duration: 1s;
 }
 
@@ -71,9 +73,14 @@ body{
     transition-timing-function: ease-out;
 }
 
-#score{
+.score{
     position: absolute;
     padding: 20px;
-    right: 0;
     font-size: 48px;
+}
+#score{
+    right: 0;
+}
+#hScore{
+    left: 0;
 }
