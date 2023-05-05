@@ -25,11 +25,17 @@ body{
     overflow: hidden;
 }
 
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+    scale: 1.4;
+}
+
 .dino{
     position: absolute;
     height: 100px;
     width: 50px;
-    background-color: white;
     border-radius: 20px;
     left: 100px;
     bottom: 100px;
