@@ -33,7 +33,7 @@ function start(interval) {
 
     setTimeout(() => {
         if(hit) return;
-        interval = (Math.floor(Math.random()*15 + 5) * 100);
+        interval = (Math.floor(Math.random()*10 + 5) * 100);
         start(interval)
         generateBarriers()
     }, interval)
@@ -97,11 +97,6 @@ window.ontouchstart = (e) => {
 function crash() {
     hit = true;
     let arr = document.getElementsByClassName('obs')
-    for(item of arr) {
-
-        item.style.left = item.offsetLeft + 'px'
-    }
-    // dino.style.bottom = '75px'
     dino.classList.remove('down')
     dino.classList.add('up')
     
@@ -109,6 +104,9 @@ function crash() {
         dino.classList.add('down')
         dino.style.rotate = '90deg'
         dino.classList.remove('up')
+        for(item of arr) {
+            item.style.left = item.offsetLeft + 'px'
+        }
     }, 250);
     
     dino.style.rotate = '75deg'
